@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: rgb(69, 100, 235);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.map {
+    flex-basis: 300px;
+    width: 300px;
+    background-color: rgb(240, 210, 45);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    width: 80%;
+    background-color: rgb(204, 39, 39);
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    width: 100%;
+    background-color: rgb(43, 224, 37);
+}
+
+button {
+    width: 50%;
+    height: 40px;
+    text-transform: uppercase;
+}
+
+.coordinates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    width: 100%;
+}
+
+h2 {
+    padding: 3px;
+    font-size: 1.5rem;
+}
