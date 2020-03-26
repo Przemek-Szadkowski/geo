@@ -10,14 +10,16 @@ function showPosition(position) {
     console.log(position);
 }
 
+function errorHandling(err) {
+    console.log(err);
+}
+
 function getLocation() {
     if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition, errorHandling, { enableHighAccuracy: true });
     } else {
         communicate.innerHTML = `Twoje urządzenie nie wspiera geolokalizacji`;
     }
 }
 
 button.addEventListener('click', getLocation);
-
-console.log(communicate);
