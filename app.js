@@ -3,8 +3,10 @@ const long = document.querySelector('.long');
 const button = document.querySelector('button');
 
 function showPosition(position) {
-    lati.innerHTML = `X: ${position.coords.latitude}`;
-    long.innerHTML = `Y: ${position.coords.longitude}`;
+    const lattitude = position.coords.latitude;
+    const longtitude = position.coords.longitude;
+    lati.innerHTML = `X: ${lattitude}`;
+    long.innerHTML = `Y: ${longtitude}`;
     console.log(position);
 }
 
