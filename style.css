@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+:root {
+    --top: 0%;
+    --left: 0%;
+}
+
 html {
     background-color: rgb(69, 100, 235);
 }
@@ -16,9 +21,20 @@ body {
 }
 
 .map {
+    position: relative;
     flex-basis: 300px;
     width: 300px;
     background-color: rgb(240, 210, 45);
+}
+
+.point {
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    transform: translate(-50%, -50%);
+    height: 10px;
+    width: 10px;
+    background-color: red;
 }
 
 .menu {
