@@ -7,7 +7,6 @@ function showPosition(position) {
     const longtitude = position.coords.longitude;
     lati.innerHTML = `X: ${lattitude}`;
     long.innerHTML = `Y: ${longtitude}`;
-    console.log(position);
 }
 
 function errorHandling(err) {
@@ -16,7 +15,7 @@ function errorHandling(err) {
 
 function getLocation() {
     if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, errorHandling, { enableHighAccuracy: true });
+       navigator.geolocation.getCurrentPosition(showPosition, errorHandling, { enableHighAccuracy: true });
     } else {
         communicate.innerHTML = `Twoje urządzenie nie wspiera geolokalizacji`;
     }
