@@ -4,11 +4,11 @@ const button = document.querySelector('button');
 const point = document.querySelector('.point');
 
 function showPosition(position) {
-    const lattitude = position.coords.latitude;
+    let lattitude = position.coords.latitude;
     const longtitude = position.coords.longitude;
     lati.innerHTML = `X: ${lattitude}`;
     long.innerHTML = `Y: ${longtitude}`;
-    setLocation(lattitude, 50);
+    setLocation(lattitude, 0);
 }
 
 function errorHandling(err) {
@@ -24,11 +24,9 @@ function getLocation() {
 }
 
 function setLocation(lati, long) {
-    const top = (lati / 100) * 51.5027447;
+    const top = (51.503503 - lati) * (100 / (51.503503 - 51.502744));
     document.documentElement.style.setProperty('--top', `${top}%`);
     document.documentElement.style.setProperty('--left', `${long}%`);
 }
-
-// setLocation(25, 10);
 
 button.addEventListener('click', getLocation);
