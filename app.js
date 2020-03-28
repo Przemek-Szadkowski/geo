@@ -30,9 +30,4 @@ function setLocation(lati, long) {
     document.documentElement.style.setProperty('--left', `${long}%`);
 }
 
-function setPosition() {
-    navigator.geolocation.watchPosition(showPosition, errorHandling);
-}
-
-// button.addEventListener('click', getLocation);
-button.addEventListener('click', setPosition);
+button.addEventListener('click', getLocation);
