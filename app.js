@@ -18,6 +18,7 @@ function errorHandling(err) {
 function getLocation() {
     if(navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(showPosition, errorHandling, { enableHighAccuracy: true });
+       console.log(id);
     } else {
         communicate.innerHTML = `Twoje urządzenie nie wspiera geolokalizacji`;
     }
@@ -29,4 +30,9 @@ function setLocation(lati, long) {
     document.documentElement.style.setProperty('--left', `${long}%`);
 }
 
-button.addEventListener('click', getLocation);
+function setPosition() {
+    navigator.geolocation.watchPosition(showPosition, errorHandling);
+}
+
+// button.addEventListener('click', getLocation);
+button.addEventListener('click', setPosition);
