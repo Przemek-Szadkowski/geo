@@ -25,10 +25,8 @@ function getLocation() {
 }
 
 function setLocation(lati, long) {
-    // const top = 51.503503 - ((51.503503 - lati) * (100 / (51.503503 - 51.502744)));
-    const top = (lati * 1) / 51.502744;
-    const left = (long * 1) / 19.1629098;
-    // const left = 19.1634806 - ((19.1634806 - long) * (100 / (19.1634806 - 19.1629098)));
+    const top = 51.503503 - ((51.503503 - lati) * (100 / (51.503503 - 51.502744)));
+    const left = 19.1634806 - ((19.1634806 - long) * (100 / (19.1634806 - 19.1629098)));
     document.documentElement.style.setProperty('--top', `${top}%`);
     document.documentElement.style.setProperty('--left', `${left}%`);
 }
