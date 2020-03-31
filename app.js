@@ -9,6 +9,7 @@ let isOnTheMap = true;
 function showPosition(position) {
     let lattitude = position.coords.latitude;
     const longtitude = position.coords.longitude;
+    console.log(lattitude, longtitude);
     setLocation(lattitude, longtitude);
     if(isOnTheMap) {
         lati.innerHTML = `X: ${lattitude}`;
@@ -32,8 +33,10 @@ function getLocation() {
 }
 
 function setLocation(lati, long) {
+    // let top = 100 - ((lati - 51.502744) * 100) / (51.503503 - 51.502744);
     let top = 100 - ((lati - 51.502744) * 100) / (51.503503 - 51.502744);
-    let left = 100 - ((long - 19.1629098) * 100) / (19.1634806 - 19.1629098);
+    // let left = ((long - 19.1629098) * 100) / (19.1634806 - 19.1629098);
+    let left = ((19.1634806 - long) * 100) / (19.1634806 - 19.1629098);
     console.log(top, left);
     if((top < 0 || top > 100) || (left < 0 || left > 100)) {
         isOnTheMap = false;
