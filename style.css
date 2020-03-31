@@ -23,7 +23,7 @@ body {
 .map {
     position: relative;
     flex-basis: 300px;
-    width: 300px;
+    width: 100px;
     background-color: rgb(240, 210, 45);
 }
 
