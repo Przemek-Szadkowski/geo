@@ -15,7 +15,7 @@ function showPosition(position) {
         lati.innerHTML = `X: ${lattitude}`;
         long.innerHTML = `Y: ${longtitude}`;
     } else {
-        coordinates.innerHTML = '<h2>Znajdujesz się poza obszarem mapy!</h2>';
+        coordinates.innerHTML = '<h2>Znajdujesz się poza obszarem mapy!!!</h2>';
         point.style.display = "none";
     }
 }
@@ -24,12 +24,16 @@ function errorHandling(err) {
     console.log(err);
 }
 
-function getLocation() {
-    if(navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(showPosition, errorHandling, { enableHighAccuracy: true });
-    } else {
-        communicate.innerHTML = `Twoje urządzenie nie wspiera geolokalizacji`;
-    }
+async function getLocation() {
+    // if(navigator.geolocation) {
+    //    navigator.geolocation.getCurrentPosition(showPosition, errorHandling, { enableHighAccuracy: true });
+    // } else {
+    //     communicate.innerHTML = `Twoje urządzenie nie wspiera geolokalizacji`;
+    // }
+    const result = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+    showPosition(result);
 }
 
 function setLocation(lati, long) {
